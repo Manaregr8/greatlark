@@ -1,0 +1,323 @@
+/* ── Footer Container ─────────────────────────────────────── */
+.footer {
+  position: relative;
+  background-color: var(--color-forest-deep);
+  color: var(--color-cream);
+  padding-top: clamp(30px, 5vw, 4rem);
+  padding-bottom: var(--space-4);
+  overflow: hidden;
+}
+
+/* ── Background & Effects ─────────────────────────────────── */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
+  mix-blend-mode: soft-light;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 26, 15, 0.4) 0%,
+    rgba(15, 26, 15, 0.7) 40%,
+    rgba(15, 26, 15, 0.95) 100%
+  );
+}
+
+@keyframes slowSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.glowingRing {
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: clamp(300px, 40vw, 600px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1px dashed rgba(245, 240, 232, 0.3);
+  box-shadow: inset 0 0 40px rgba(245, 240, 232, 0.02);
+  opacity: 0.8;
+  animation: slowSpin 60s linear infinite;
+  
+  /* Mask to fake it going behind the mountain ridge */
+  -webkit-mask-image: linear-gradient(210deg, black 40%, transparent 60%);
+  mask-image: linear-gradient(210deg, black 40%, transparent 60%);
+}
+
+/* ── Container (z-index) ──────────────────────────────────── */
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 70vh;
+}
+
+/* ── Top Area (CTA & Motto) ───────────────────────────────── */
+.topArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: clamp(4rem, 10vw, 8rem);
+}
+
+.ctaCol {
+  max-width: 680px;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-4);
+}
+
+.subline {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(245, 240, 232, 0.85);
+  margin-bottom: var(--space-5);
+  max-width: 500px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-ivory);
+  color: var(--color-forest-deep);
+  padding: 0.875rem 1.5rem;
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: background-color var(--dur-micro) var(--ease-out),
+              transform var(--dur-micro) var(--ease-out);
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.ctaBtn span {
+  transition: transform var(--dur-micro) var(--ease-out);
+}
+
+.ctaBtn:hover span {
+  transform: translateX(4px);
+}
+
+.mottoCol {
+  padding-top: 0.5rem;
+}
+
+.motto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.motto p {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+  margin-bottom: 1rem;
+}
+
+.mottoLine {
+  width: 3.5rem;
+  height: 1px;
+  background-color: rgba(245, 240, 232, 0.3);
+}
+
+/* ── Middle Area (Nav, Logo, Socials) ─────────────────────── */
+.middleArea {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  align-items: end;
+  gap: var(--space-4);
+  padding-bottom: var(--space-5);
+}
+
+.brandReveal {
+  align-self: end;
+}
+
+.logoGroup {
+  display: inline-flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logoMain {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-ivory);
+}
+
+.logoSub {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  margin-top: 0.5rem;
+}
+
+.navCol {
+  justify-self: start;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navList a {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.85);
+  text-decoration: none;
+  transition: color var(--dur-micro) var(--ease-out);
+}
+
+.navList a:hover {
+  color: var(--color-ivory);
+}
+
+.socialCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  justify-self: end;
+  max-width: 240px;
+}
+
+.socialDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(245, 240, 232, 0.85);
+}
+
+.socials {
+  display: flex;
+  gap: 1.25rem;
+  border-top: 1px solid rgba(245, 240, 232, 0.2);
+  padding-top: var(--space-3);
+}
+
+.socials a {
+  color: rgba(245, 240, 232, 0.8);
+  transition: color var(--dur-micro) var(--ease-out),
+              transform var(--dur-micro) var(--ease-out);
+}
+
+.socials a:hover {
+  color: var(--color-ivory);
+  transform: translateY(-2px);
+}
+
+/* ── Bottom Bar ───────────────────────────────────────────── */
+.bottomBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(245, 240, 232, 0.1);
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.copyright {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.5);
+}
+
+.legal {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.legal a {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.5);
+  text-decoration: none;
+  transition: color var(--dur-micro) var(--ease-out);
+}
+
+.legal a:hover {
+  color: var(--color-ivory);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .middleArea {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+  .brandReveal {
+    grid-column: 1 / -1;
+  }
+  .socialCol {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .topArea {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .mottoCol {
+    display: none;
+  }
+
+  .middleArea {
+    grid-template-columns: 1fr;
+  }
+
+  .brandReveal {
+    align-self: start;
+  }
+
+  .bottomBar {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}

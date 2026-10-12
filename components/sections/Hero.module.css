@@ -1,0 +1,329 @@
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100svh;
+  height: 100vh;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--color-forest-deep);
+}
+
+/* ── Background ───────────────────────────────────────────── */
+.bgWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Gradient overlay — dark on left (text contrast), lighter on right (image visible) */
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(8, 16, 8, 0.82) 0%,
+      rgba(8, 16, 8, 0.70) 40%,
+      rgba(8, 16, 8, 0.35) 68%,
+      rgba(8, 16, 8, 0.15) 100%
+    ),
+    linear-gradient(
+      to bottom,
+      rgba(8, 16, 8, 0.2) 0%,
+      rgba(8, 16, 8, 0.0) 50%,
+      rgba(8, 16, 8, 0.55) 100%
+    );
+}
+
+/* ── Vertical Column Panels ───────────────────────────────── */
+/* Replicates the frosted/light column accents from reference image */
+.columns {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.col1 {
+  width: 1px;
+  background: rgba(245, 240, 232, 0.08);
+  margin-right: 5%;
+}
+
+.col2 {
+  width: 180px;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 232, 0.00) 0%,
+    rgba(245, 240, 232, 0.06) 20%,
+    rgba(245, 240, 232, 0.09) 50%,
+    rgba(245, 240, 232, 0.04) 80%,
+    rgba(245, 240, 232, 0.00) 100%
+  );
+  background-size: 100% 200%;
+  animation: shimmerFlow 8s ease-in-out infinite alternate;
+  border-left: 1px solid rgba(245, 240, 232, 0.08);
+  border-right: 1px solid rgba(245, 240, 232, 0.08);
+}
+
+.col3 {
+  width: 80px;
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 240, 232, 0.00) 0%,
+    rgba(245, 240, 232, 0.04) 30%,
+    rgba(245, 240, 232, 0.07) 60%,
+    rgba(245, 240, 232, 0.02) 90%,
+    rgba(245, 240, 232, 0.00) 100%
+  );
+  background-size: 100% 200%;
+  animation: shimmerFlow 10s ease-in-out infinite alternate 1s;
+  border-left: 1px solid rgba(245, 240, 232, 0.06);
+}
+
+/* ── Accent Text ──────────────────────────────────────────── */
+/* "DISCIPLINE CREATES FREEDOM" — right column, like in reference */
+.accentText {
+  position: absolute;
+  right: 3.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  opacity: 0;
+  animation: heroFadeIn 1.2s var(--ease-editorial) 1.6s forwards;
+}
+
+.accentText span {
+  font-family: var(--font-sans);
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+  line-height: 1.6;
+}
+
+/* ── Main Content ─────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-top: 5rem; /* nav offset */
+}
+
+.inner {
+  max-width: 660px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* Headline */
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 5.5vw, 5rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  color: var(--color-cream);
+  opacity: 0;
+  animation: heroFadeUp 1s var(--ease-editorial) 0.4s forwards;
+}
+
+/* Subline */
+.subline {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  line-height: 1.72;
+  color: rgba(245, 240, 232, 0.68);
+  max-width: 46ch;
+  opacity: 0;
+  animation: heroFadeUp 0.9s var(--ease-editorial) 0.7s forwards;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: heroFadeUp 0.8s var(--ease-editorial) 0.95s forwards;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  border: 1px solid var(--color-cream);
+  padding: 0.875rem 1.75rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-micro) var(--ease-out),
+    border-color     var(--dur-micro) var(--ease-out),
+    transform        var(--dur-micro) var(--ease-out),
+    gap              var(--dur-micro) var(--ease-out);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-champagne);
+  border-color: var(--color-champagne);
+  transform: translateY(-1px);
+  gap: 0.875rem;
+}
+
+/* ── Trust Bar ────────────────────────────────────────────── */
+.trustBar {
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid rgba(245, 240, 232, 0.12);
+  background-color: rgba(8, 16, 8, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  animation: heroFadeIn 0.8s var(--ease-out) 1.4s forwards;
+}
+
+.trustInner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-block: 1.25rem;
+  divide-x: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.trustItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding-inline: 1rem;
+  border-right: 1px solid rgba(245, 240, 232, 0.1);
+}
+
+.trustItem:last-child {
+  border-right: none;
+}
+
+.trustValue {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 400;
+  color: var(--color-cream);
+  line-height: 1;
+}
+
+.trustLabel {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+  text-align: center;
+}
+
+/* Secondary ghost button */
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-cream);
+  background-color: transparent;
+  border: 1px solid rgba(245, 240, 232, 0.35);
+  padding: 0.875rem 1.75rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-micro) var(--ease-out),
+    border-color     var(--dur-micro) var(--ease-out),
+    transform        var(--dur-micro) var(--ease-out);
+}
+
+.btnSecondary:hover {
+  background-color: rgba(245, 240, 232, 0.08);
+  border-color: rgba(245, 240, 232, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ── Keyframes ────────────────────────────────────────────── */
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmerFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .col2 { width: 120px; }
+  .col3 { width: 60px; }
+  .accentText { display: none; }
+}
+
+@media (max-width: 768px) {
+  .hero { height: auto; min-height: 100svh; }
+  .columns { display: none; }
+
+  .content {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    align-items: flex-end;
+    flex: 1;
+  }
+
+  .trustInner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 0;
+  }
+
+  .trustItem:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trustInner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

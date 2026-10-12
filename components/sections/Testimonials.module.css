@@ -1,0 +1,144 @@
+/* ── Section ──────────────────────────────────────────────── */
+.section {
+  background-color: var(--color-ivory); /* Matches the light background in the screenshot */
+  padding-block: clamp(30px, 5vw, 4rem);
+  overflow: hidden;
+}
+
+/* ── Card Layout ──────────────────────────────────────────── */
+.card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+/* ── Portrait ─────────────────────────────────────────────── */
+.portrait {
+  flex-shrink: 0;
+}
+
+.portraitFrame {
+  position: relative;
+  width: clamp(140px, 15vw, 200px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--color-border);
+  transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+}
+
+.portraitImg {
+  object-fit: cover;
+}
+
+.portraitOut {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* ── Quote Block ──────────────────────────────────────────── */
+.quoteBlock {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
+}
+
+.quoteOut {
+  opacity: 0;
+  transform: translateX(-16px);
+}
+
+.openQuote {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 6vw, 6rem);
+  line-height: 0.8;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-2);
+}
+
+.quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Footer & Author ──────────────────────────────────────── */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--text-md);
+  color: var(--color-charcoal);
+  letter-spacing: -0.01em;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-mist);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+.nav {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.navBtn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: var(--color-mist);
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--dur-micro) var(--ease-out),
+              transform var(--dur-micro) var(--ease-out);
+}
+
+.navBtn:hover {
+  color: var(--color-charcoal);
+}
+
+.navBtn:first-child:hover {
+  transform: translateX(-3px);
+}
+
+.navBtn:last-child:hover {
+  transform: translateX(3px);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .portraitFrame {
+    width: 120px;
+  }
+}

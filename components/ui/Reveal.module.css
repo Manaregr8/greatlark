@@ -1,0 +1,17 @@
+.reveal {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Variants — hidden state */
+.variantUp    { opacity: 0; transform: translateY(28px); }
+.variantLeft  { opacity: 0; transform: translateX(-24px); }
+.variantRight { opacity: 0; transform: translateX(24px); }
+.variantScale { opacity: 0; transform: scale(0.97); }
+.variantFade  { opacity: 0; transform: none; }
+
+/* Visible state */
+.visible {
+  opacity: 1 !important;
+  transform: none !important;
+}

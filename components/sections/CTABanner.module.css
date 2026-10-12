@@ -1,0 +1,78 @@
+.ctaBanner {
+  background-color: var(--color-forest);
+  padding-block: clamp(30px, 5vw, 4rem);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.decorativeCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 169, 110, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: 680px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 300;
+  color: var(--color-cream);
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--color-champagne);
+}
+
+.subline {
+  font-size: var(--text-md);
+  color: rgba(245, 240, 232, 0.7);
+  line-height: var(--leading-relaxed);
+  max-width: 50ch;
+  margin-inline: auto;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-forest-deep);
+  background-color: var(--color-champagne);
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition:
+    background-color var(--dur-micro) var(--ease-out),
+    transform var(--dur-micro) var(--ease-out),
+    gap var(--dur-micro) var(--ease-out);
+  margin-top: var(--space-2);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-champagne-mid);
+  transform: translateY(-1px);
+  gap: 0.75rem;
+}

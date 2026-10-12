@@ -1,0 +1,96 @@
+.results {
+  background-color: var(--color-charcoal);
+  color: var(--color-cream);
+  padding-block: clamp(30px, 5vw, 4rem);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--color-ivory);
+  letter-spacing: -0.02em;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--color-champagne);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  margin-top: var(--space-3);
+}
+
+.cardWrap {
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-6) var(--space-4);
+  background-color: rgba(245, 240, 232, 0.03);
+  border: 1px solid rgba(245, 240, 232, 0.05);
+  border-radius: 4px;
+  height: 100%;
+  transition: transform var(--dur-ui) var(--ease-out),
+              background-color var(--dur-ui) var(--ease-out),
+              border-color var(--dur-ui) var(--ease-out);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background-color: rgba(245, 240, 232, 0.05);
+  border-color: rgba(245, 240, 232, 0.15);
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-champagne);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-ivory);
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(245, 240, 232, 0.1);
+  width: 100%;
+}
+
+.statDesc {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: rgba(245, 240, 232, 0.7);
+  max-width: 280px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
