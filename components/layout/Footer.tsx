@@ -61,9 +61,9 @@ export function Footer() {
         <div className={styles.middleArea}>
           <Reveal variant="up" delay={100} className={styles.brandReveal}>
             <div className={styles.brandCol}>
-              <Link href="/" className={styles.logoGroup} aria-label="GreatLark Institute">
+              <Link href="/" className={styles.logoGroup} aria-label="GreatLark Finserve LLP">
                 <span className={styles.logoMain}>GreatLark</span>
-                <span className={styles.logoSub}>INSTITUTE</span>
+                <span className={styles.logoSub}>FINSERVE LLP</span>
               </Link>
             </div>
           </Reveal>
@@ -114,7 +114,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            &copy; {currentYear} GreatLark Institute. All rights reserved.
+            &copy; {currentYear} GreatLark Finserve LLP. All rights reserved.
           </p>
           <div className={styles.legal}>
             <Link href="/privacy">Privacy</Link>

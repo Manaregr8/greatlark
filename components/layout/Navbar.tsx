@@ -47,7 +47,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="GreatLark — Home">
             <span className={styles.logoMain}>GreatLark</span>
-            <span className={styles.logoSub}>Institute</span>
+            <span className={styles.logoSub}>Finserve LLP</span>
           </Link>
 
           {/* Desktop Links */}
