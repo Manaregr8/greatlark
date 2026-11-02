@@ -1,14 +1,14 @@
 // ============================================================
-// GreatLark — Site Content Data Layer
+// Greatlark — Site Content Data Layer
 // All copy, stats, services, testimonials, approach steps
 // Single source of truth — edit here, reflects everywhere
 // ============================================================
 
 export const siteConfig = {
-  name: 'GreatLark',
+  name: 'Greatlark',
   tagline: 'Wealth Deserves a Considered Approach',
   description:
-    'GreatLark is a premium wealth management and financial advisory firm serving high-net-worth families across Delhi NCR. We provide personalised strategies to protect, diversify, and grow your wealth — for the long term.',
+    'Greatlark is a premium wealth management and financial advisory firm serving high-net-worth families across Delhi NCR. We provide personalised strategies to protect, diversify, and grow your wealth — for the long term.',
   url: 'https://www.greatlark.com',
   portfolioUrl: 'https://portfolio.greatlark.com/client-login',
   consultationUrl: '/contact',
@@ -277,7 +277,7 @@ export const testimonials = [
   {
     id: 'aarav',
     quote:
-      'GreatLark helped me see finance not just as a subject, but as a way to think. The structured learning, supportive community, and real-world exposure made all the difference.',
+      'Greatlark helped me see finance not just as a subject, but as a way to think. The structured learning, supportive community, and real-world exposure made all the difference.',
     name: 'Aarav Mehta',
     role: 'B.Com Student, Delhi University',
     imageSrc: '/testimonial-aarav.jpg',
@@ -286,7 +286,7 @@ export const testimonials = [
   {
     id: 'priya',
     quote:
-      'Before GreatLark, investing felt intimidating. After just a few months, I built my first SIP portfolio and finally understood how markets actually work. It changed how I think about money.',
+      'Before Greatlark, investing felt intimidating. After just a few months, I built my first SIP portfolio and finally understood how markets actually work. It changed how I think about money.',
     name: 'Priya Sharma',
     role: 'MBA Student, IIM Lucknow',
     imageSrc: '/testimonial-priya.jpg',
@@ -304,7 +304,7 @@ export const testimonials = [
   {
     id: 'mehak',
     quote:
-      'I joined GreatLark to understand markets, but what I gained was a whole new lens for decision-making. The mentors are exceptional — they challenge you and believe in your potential.',
+      'I joined Greatlark to understand markets, but what I gained was a whole new lens for decision-making. The mentors are exceptional — they challenge you and believe in your potential.',
     name: 'Mehak Gupta',
     role: 'Contract Lawyer, Infosys',
     imageSrc: 'https://cdn.prod.website-files.com/64bfb177368e3149d602e512/64d37bd55e99e6ed02b52fd9_MehakNew.webp',
@@ -339,7 +339,7 @@ export const navLinks = [
 
 export const footerLinks = {
   company: [
-    { label: 'About GreatLark', href: '/#about' },
+    { label: 'About Greatlark', href: '/#about' },
     { label: 'Our Approach', href: '/#approach' },
     { label: 'Insights', href: '/insights' },
     { label: 'Contact', href: '/contact' },

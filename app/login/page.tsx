@@ -16,7 +16,7 @@ const loginOptions = [
   },
   {
     title: 'Employee Login',
-    description: 'Internal access for GreatLark team.',
+    description: 'Internal access for Greatlark team.',
     href: 'https://portfolio.greatlark.com/emp-login',
   },
 ];
@@ -28,7 +28,7 @@ export default function LoginPage() {
         <div className={`container ${styles.container}`}>
           <div className={styles.header}>
             <Reveal variant="up">
-              <h1 className={styles.title}>Welcome to GreatLark</h1>
+              <h1 className={styles.title}>Welcome to Greatlark</h1>
             </Reveal>
             <Reveal variant="up" delay={100}>
               <p className={styles.subtitle}>

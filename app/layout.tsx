@@ -4,29 +4,29 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Financial Consulting & Wealth Management Services Delhi NCR | GreatLark',
+  title: 'Financial Consulting & Wealth Management Services Delhi NCR | Greatlark',
   description:
-    'Discover innovative financial solutions at GreatLark. Expertise in real estate investments, portfolio management, and estate planning for high-net-worth families.',
-  keywords: 'wealth management, financial advisory, private wealth, estate planning, Delhi NCR, portfolio management, GreatLark',
+    'Discover innovative financial solutions at Greatlark. Expertise in real estate investments, portfolio management, and estate planning for high-net-worth families.',
+  keywords: 'wealth management, financial advisory, private wealth, estate planning, Delhi NCR, portfolio management, Greatlark',
   openGraph: {
-    title: 'GreatLark — Premium Wealth Management & Financial Advisory',
+    title: 'Greatlark — Premium Wealth Management & Financial Advisory',
     description:
       'Expertise in real estate investments, portfolio management, and estate planning for high-net-worth families across Delhi NCR.',
     url: 'https://www.greatlark.com',
-    siteName: 'GreatLark',
+    siteName: 'Greatlark',
     type: 'website',
     images: [
       {
         url: 'https://cdn.prod.website-files.com/64bfb177368e3149d602e512/64bfb7345ffb564b68d5370e_logo.svg',
         width: 1200,
         height: 630,
-        alt: 'GreatLark Wealth Management',
+        alt: 'Greatlark Wealth Management',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GreatLark — Premium Wealth Management',
+    title: 'Greatlark — Premium Wealth Management',
     description: 'Expertise in portfolio management and estate planning for high-net-worth families.',
   },
   robots: {

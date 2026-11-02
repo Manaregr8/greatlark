@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useMemo, useCallback } from 'react';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Reveal } from '@/components/ui/Reveal';
+import { ContactTrigger } from '@/components/ui/ContactTrigger';
 import styles from './Calculators.module.css';
 
 /* ── Helpers ──────────────────────────────────────────────── */
@@ -22,7 +23,7 @@ function InvestmentCalculator() {
   const [rate, setRate] = useState(12);
   const [years, setYears] = useState(15);
 
-  const { futureValue, totalContrib, totalInterest, chartBars } = useMemo(() => {
+  const { futureValue, totalContrib, totalInterest } = useMemo(() => {
     const r = rate / 100;
     // FV of lump sum + FV of annual contributions (end-of-year)
     const fvPrincipal = principal * Math.pow(1 + r, years);
@@ -31,16 +32,7 @@ function InvestmentCalculator() {
     const tc = principal + annualContrib * years;
     const ti = fv - tc;
 
-    // Build year-by-year values for mini bar chart (sample 8 points)
-    const points = Array.from({ length: 8 }, (_, i) => {
-      const yr = Math.round(1 + (i * (years - 1)) / 7);
-      const v = principal * Math.pow(1 + r, yr) + (annualContrib === 0 ? 0 : annualContrib * ((Math.pow(1 + r, yr) - 1) / r));
-      return v;
-    });
-    const max = Math.max(...points);
-    const bars = points.map(v => ({ height: max > 0 ? (v / max) * 100 : 0 }));
-
-    return { futureValue: fv, totalContrib: tc, totalInterest: ti, chartBars: bars };
+    return { futureValue: fv, totalContrib: tc, totalInterest: ti };
   }, [principal, annualContrib, rate, years]);
 
   const handlePrincipalBlur = () => {
@@ -185,12 +177,10 @@ function InvestmentCalculator() {
           <p className={styles.ctaTitle}>Maximize Your Investment Potential</p>
           <p className={styles.ctaDesc}>Schedule a consultation with our experts to optimize your investment strategy.</p>
         </div>
-        <Link href="/contact" className={styles.ctaBtn}>
-          Book a Consultation
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
+        <ContactTrigger
+          label="Book a Consultation"
+          variant="forest"
+        />
       </div>
     </div>
   );
@@ -336,12 +326,10 @@ function EMICalculator() {
           <p className={styles.ctaTitle}>Take the Next Step Towards Financial Freedom</p>
           <p className={styles.ctaDesc}>Ready to make your dream a reality? Start your loan application process now and get the best rates available.</p>
         </div>
-        <Link href="/contact" className={styles.ctaBtn}>
-          Talk to an Advisor
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-            <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </Link>
+        <ContactTrigger
+          label="Talk to an Advisor"
+          variant="forest"
+        />
       </div>
     </div>
   );

@@ -1,0 +1,199 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./components/sections/Insights.module.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************/
+/* ── Insights Section ─────────────────────────────────────── */
+.Insights_section__tw99n {
+  background-color: var(--color-warm-white);
+  padding-block: clamp(30px, 5vw, 4rem);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.Insights_header__9c1it {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.Insights_heading__iygvr {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--color-charcoal);
+  max-width: 560px;
+}
+
+.Insights_exploreLink__yFdVL {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-charcoal-mid);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-bottom: 0.125rem;
+  transition: color var(--dur-micro) var(--ease-out),
+              gap var(--dur-micro) var(--ease-out);
+}
+
+.Insights_exploreLink__yFdVL:hover {
+  color: var(--color-charcoal);
+  gap: 0.75rem;
+}
+
+/* ── Grid ─────────────────────────────────────────────────── */
+.Insights_grid__wpDed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--space-3);
+  gap: var(--space-3);
+}
+
+/* ── Card ─────────────────────────────────────────────────── */
+.Insights_card__ddYib {
+  /* Reveal wraps this */
+}
+
+.Insights_cardInner__otzXe {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color-ivory);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Insights_cardInner__otzXe:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 48px rgba(26, 46, 26, 0.09);
+}
+
+/* ── Image ────────────────────────────────────────────────── */
+.Insights_imageWrap__549YB {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: var(--color-border);
+}
+
+.Insights_image__SqVka {
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.Insights_cardInner__otzXe:hover .Insights_image__SqVka {
+  transform: scale(1.04);
+}
+
+/* ── Text ─────────────────────────────────────────────────── */
+.Insights_text__wJbaf {
+  padding: var(--space-3) var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.Insights_category__WaZ8r {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-mist);
+  margin-bottom: var(--space-2);
+}
+
+.Insights_title__bQD0N {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 1.75vw, 1.625rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-2);
+}
+
+.Insights_body__SKwSA {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--color-mist);
+  flex: 1 1;
+  margin-bottom: var(--space-3);
+}
+
+.Insights_readLink__9nwEN {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.25rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: gap var(--dur-micro) var(--ease-out),
+              border-color var(--dur-micro) var(--ease-out),
+              color var(--dur-micro) var(--ease-out);
+}
+
+.Insights_cardInner__otzXe:hover .Insights_readLink__9nwEN {
+  gap: 0.625rem;
+  border-color: var(--color-charcoal);
+  color: var(--color-charcoal);
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .Insights_grid__wpDed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .Insights_heading__iygvr {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Insights_header__9c1it {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+  .Insights_grid__wpDed {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*!***************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[7].use[3]!./components/ui/Reveal.module.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************/
+.Reveal_reveal__IVrjZ {
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Variants — hidden state */
+.Reveal_variantUp__TL7IH    { opacity: 0; transform: translateY(28px); }
+.Reveal_variantLeft__m8DnG  { opacity: 0; transform: translateX(-24px); }
+.Reveal_variantRight__b_OC8 { opacity: 0; transform: translateX(24px); }
+.Reveal_variantScale__PmmMg { opacity: 0; transform: scale(0.97); }
+.Reveal_variantFade__MAdGi  { opacity: 0; transform: none; }
+
+/* Visible state */
+.Reveal_visible__UW5DF {
+  opacity: 1 !important;
+  transform: none !important;
+}
+

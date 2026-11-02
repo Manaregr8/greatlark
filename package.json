@@ -1,7 +1,7 @@
 {
   "name": "greatlark",
   "version": "1.0.0",
-  "description": "GreatLark — Premium Wealth Management & Financial Advisory",
+  "description": "Greatlark — Premium Wealth Management & Financial Advisory",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/data';
 import { StatCounter } from '@/components/ui/StatCounter';
+import { ContactTrigger } from '@/components/ui/ContactTrigger';
 import styles from './Hero.module.css';
 
 const trustItems = [
@@ -66,9 +67,12 @@ export function Hero() {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
-            <Link href="/contact" className={styles.btnSecondary}>
-              Let&apos;s Talk
-            </Link>
+            <ContactTrigger
+              label="Let's Talk"
+              variant="custom"
+              className={styles.btnSecondary}
+              showArrow={false}
+            />
           </div>
 
         </div>

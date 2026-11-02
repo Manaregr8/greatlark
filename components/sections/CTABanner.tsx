@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import { siteConfig } from '@/lib/data';
 import { Reveal } from '@/components/ui/Reveal';
+import { ContactTrigger } from '@/components/ui/ContactTrigger';
 import styles from './CTABanner.module.css';
 
 export function CTABanner() {
@@ -26,12 +25,11 @@ export function CTABanner() {
         </Reveal>
 
         <Reveal variant="up" delay={200}>
-          <Link href={siteConfig.consultationUrl} className={styles.btnPrimary}>
-            Book a Consultation
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </Link>
+          <ContactTrigger
+            label="Book a Consultation"
+            variant="primary"
+            className={styles.btnPrimary}
+          />
         </Reveal>
 
       </div>

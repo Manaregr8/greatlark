@@ -77,7 +77,7 @@ export function About() {
             <div className={styles.mainPhoto}>
               <Image
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=900&h=1100"
-                alt="GreatLark wealth management office"
+                alt="Greatlark wealth management office"
                 fill
                 className={styles.photo}
                 sizes="(max-width: 1024px) 100vw, 50vw"

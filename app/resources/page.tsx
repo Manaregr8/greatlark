@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Insights } from '@/components/sections/Insights';
 
 export const metadata: Metadata = {
-  title: 'Resources | GreatLark',
+  title: 'Resources | Greatlark',
   description: 'Explore our latest insights and thought leadership on wealth management.',
 };
 

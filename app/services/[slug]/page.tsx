@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { services } from '@/lib/data';
+import { ContactTrigger } from '@/components/ui/ContactTrigger';
 import styles from './page.module.css';
 
 export function generateStaticParams() {
@@ -29,40 +30,42 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
             priority
           />
         )}
+        <div className={styles.heroOverlay} />
         <div className={`container ${styles.heroContent}`}>
-          <div className={styles.eyebrowWrap}>
-            <span className={styles.eyebrow}>Our Services</span>
-            <span className={styles.eyebrowLine} />
-          </div>
-          <h1 className={styles.title}>{service.title}</h1>
-          <p className={styles.tagline}>{service.detail?.tagline || service.body}</p>
+          <span className={styles.heroNumber}>{service.number}</span>
+          <h1 className={styles.heroTitle}>{service.title}</h1>
+          <p className={styles.heroTagline}>{service.detail?.tagline || service.body}</p>
         </div>
       </div>
 
       <div className={`container ${styles.contentGrid}`}>
-        <div className={styles.mainContent}>
-          <p className={styles.description}>
-            {service.detail?.description || service.body}
-          </p>
-          
+        <article className={styles.article}>
+          <div className={styles.sectionBlock}>
+            <h2 className={styles.sectionTitle}>Overview</h2>
+            <p className={styles.description}>{service.detail?.description || service.body}</p>
+          </div>
+
           {service.detail?.highlights && (
-            <div className={styles.highlights}>
-              {service.detail.highlights.map((highlight, idx) => (
-                <div key={idx} className={styles.highlightItem}>
-                  <h3 className={styles.highlightLabel}>{highlight.label}</h3>
-                  <p className={styles.highlightText}>{highlight.text}</p>
-                </div>
-              ))}
+            <div className={styles.sectionBlock}>
+              <h2 className={styles.sectionTitle}>Key Capabilities</h2>
+              <div className={styles.highlightsGrid}>
+                {service.detail.highlights.map((h, i) => (
+                  <div key={i} className={styles.highlightCard}>
+                    <h3 className={styles.highlightLabel}>{h.label}</h3>
+                    <p className={styles.highlightText}>{h.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
-        </div>
+        </article>
 
         <aside className={styles.sidebar}>
           <h2 className={styles.sidebarTitle}>All Services</h2>
           <nav className={styles.sidebarLinks}>
             {services.map((s) => (
-              <Link 
-                key={s.id} 
+              <Link
+                key={s.id}
                 href={s.href}
                 className={`${styles.sidebarLink} ${s.id === service.id ? styles.sidebarLinkActive : ''}`}
               >
@@ -70,12 +73,13 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
               </Link>
             ))}
           </nav>
-          
+
           <div className={styles.contactBox}>
             <p className={styles.contactText}>Ready to discuss your financial goals?</p>
-            <Link href="/contact" className={styles.contactBtn}>
-              Contact Us
-            </Link>
+            <ContactTrigger
+              label="Talk to an Advisor"
+              variant="forest"
+            />
           </div>
         </aside>
       </div>

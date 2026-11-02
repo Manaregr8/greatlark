@@ -45,8 +45,8 @@ export function Navbar() {
         <div className={`container ${styles.inner}`}>
 
           {/* Logo */}
-          <Link href="/" className={styles.logo} aria-label="GreatLark — Home">
-            <span className={styles.logoMain}>GreatLark</span>
+          <Link href="/" className={styles.logo} aria-label="Greatlark — Home">
+            <span className={styles.logoMain}>Greatlark</span>
             <span className={styles.logoSub}>Finserve LLP</span>
           </Link>
 
